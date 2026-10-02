@@ -1,0 +1,400 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333333;
+    margin: 0;
+    padding: 30px 20px;
+}
+
+.contenidor {
+    max-width: 960px;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Capçalera */
+.capcalera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.capcalera h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+    color: #1a202c;
+}
+
+.capcalera .subtitol {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+/* Botons */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secundari {
+    background-color: #6c757d;
+}
+
+.btn-secundari:hover {
+    background-color: #5c636a;
+}
+
+/* Botó adhesiu a la part inferior (sticky bottom) amb Flexbox */
+.contenidor-sticky-bottom {
+    position: sticky;
+    bottom: 25px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 25px;
+    pointer-events: none;
+}
+
+.contenidor-sticky {
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    pointer-events: none;
+}
+
+.boto-tema-sticky {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #dee2e6;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.boto-tema-sticky:hover {
+    background-color: #f8f9fa;
+    border-color: #0d6efd;
+    color: #0d6efd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Panell d'estadístiques (index.php) */
+.panell-estadistiques {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.caixa-estadistica {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.caixa-estadistica h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.caixa-estadistica .valor {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin: 0;
+}
+
+.caixa-estadistica .escala {
+    font-size: 1rem;
+    color: #adb5bd;
+}
+
+/* Menú de navegació de l'inici */
+.menu-vistes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.enllac-vista {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 16px 20px;
+    border-radius: 8px;
+    color: #212529;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.15s ease-in-out;
+}
+
+.enllac-vista:hover {
+    border-color: #0d6efd;
+    background-color: #f8f9fa;
+    color: #0d6efd;
+}
+
+/* Taula (taula.php) */
+.taula-contenidor {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow-x: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Targetes (llista.php) */
+.graella-llibres {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.targeta-llibre {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.targeta-llibre h3 {
+    margin: 0 0 12px 0;
+    color: #1a202c;
+    font-size: 1.2rem;
+}
+
+.targeta-llibre p {
+    margin: 6px 0;
+    color: #495057;
+    font-size: 0.92rem;
+}
+
+/* Badges / Etiquetes d'estat */
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-genere {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.badge-llegit {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.badge-pendent {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.estrelles {
+    color: #ffc107;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.sense-valoracio {
+    color: #adb5bd;
+}
+
+/* Transicions suaus */
+body, .caixa-estadistica, .enllac-vista, .taula-contenidor, .targeta-llibre, table, th, td {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Estils per al Mode Fosc */
+body.mode-fosc {
+    background-color: #1a1d20;
+    color: #e2e8f0;
+}
+
+body.mode-fosc .capcalera {
+    border-bottom-color: #2d3238;
+}
+
+body.mode-fosc .capcalera h1 {
+    color: #f8fafc;
+}
+
+body.mode-fosc .capcalera .subtitol {
+    color: #94a3b8;
+}
+
+body.mode-fosc .caixa-estadistica,
+body.mode-fosc .enllac-vista,
+body.mode-fosc .taula-contenidor,
+body.mode-fosc .targeta-llibre {
+    background-color: #22262b;
+    border-color: #33383f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.mode-fosc .caixa-estadistica h3 {
+    color: #94a3b8;
+}
+
+body.mode-fosc .caixa-estadistica .valor {
+    color: #60a5fa;
+}
+
+body.mode-fosc .enllac-vista {
+    color: #e2e8f0;
+}
+
+body.mode-fosc .enllac-vista:hover {
+    background-color: #2a3036;
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
+body.mode-fosc table th {
+    background-color: #272c32;
+    color: #94a3b8;
+    border-bottom: 2px solid #33383f;
+}
+
+body.mode-fosc table td {
+    border-bottom: 1px solid #33383f;
+    color: #cbd5e1;
+}
+
+body.mode-fosc tr:nth-child(even) {
+    background-color: #202428;
+}
+
+body.mode-fosc tr:hover {
+    background-color: #2b3036;
+}
+
+body.mode-fosc .targeta-llibre h3 {
+    color: #f8fafc;
+}
+
+body.mode-fosc .targeta-llibre p {
+    color: #cbd5e1;
+}
+
+body.mode-fosc .badge-genere {
+    background-color: #33383f;
+    color: #cbd5e1;
+}
+
+body.mode-fosc .badge-llegit {
+    background-color: #14452a;
+    color: #86efac;
+}
+
+body.mode-fosc .badge-pendent {
+    background-color: #58151c;
+    color: #fca5a5;
+}
+
+body.mode-fosc .btn-secundari {
+    background-color: #373b3e;
+    color: #e2e8f0;
+}
+
+body.mode-fosc .btn-secundari:hover {
+    background-color: #495057;
+}
+
+body.mode-fosc .boto-tema-sticky {
+    background-color: #22262b;
+    color: #e2e8f0;
+    border-color: #373b3e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+body.mode-fosc .boto-tema-sticky:hover {
+    background-color: #2a3036;
+    border-color: #60a5fa;
+    color: #60a5fa;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+
+

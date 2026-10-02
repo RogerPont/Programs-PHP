@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333333;
+    margin: 0;
+    padding: 30px 20px;
+}
+
+.contenidor {
+    max-width: 960px;
+    margin: 0 auto;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Capçalera */
+.capcalera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.capcalera h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+    color: #1a202c;
+}
+
+.capcalera .subtitol {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+/* Botons */
+.btn, .boto-tornar, input[type="submit"] {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.btn:hover, .boto-tornar:hover, input[type="submit"]:hover {
+    background-color: #0b5ed7;
+}
+
+.boto-tornar {
+    background-color: #6c757d;
+}
+
+.boto-tornar:hover {
+    background-color: #5c636a;
+}
+
+/* Formularis */
+form {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #495057;
+}
+
+input[type="number"], input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus, input[type="text"]:focus, select:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.resultat {
+    margin-top: 15px;
+}
