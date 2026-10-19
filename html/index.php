@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ÿþ<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,11 +22,11 @@
         <input type="submit" value="Cercar" name="ordenarCapitals">
     </form>
     <?php
-    if (isset($_GET["ordenarCapitals"])) {
+    if (isset($_GET["ordenarCapitals"]){
         include "./Tasca03/includes/functions.php";
         Form($_GET, $ceu);
     }
     ?>
 </body>
 
-</html>
+</html
