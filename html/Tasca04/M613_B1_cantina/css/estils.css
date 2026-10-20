@@ -1,0 +1,40 @@
+
+/* Tipografia i fons general */
+body {
+    background-color: #f4f6f8;
+    color: #212529;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Efecte d'elevació per a les targetes de producte */
+.producte-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0.5rem;
+}
+
+.producte-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Ajustos de la taula del cistell */
+.table th {
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+}
+
+.table td {
+    font-size: 0.95rem;
+}
+
+/* Formulari de login */
+.card {
+    border-radius: 0.5rem;
+}
+
+/* Marca del navegador */
+.navbar-brand {
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+}
