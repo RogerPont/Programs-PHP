@@ -17,9 +17,9 @@ unset($_SESSION['errors']);
 $titol = "Registre d'Usuari";
 include __DIR__ . '/includes/header.php';
 ?>
-
 <main class="container">
     <h1>Registre d'Usuari</h1>
+    <p class="subtitol">Completa els camps requerits per registrar un nou compte al sistema.</p>
 
     <form action="valida_registre.php" method="POST" novalidate>
         <div class="camp-formulari">
