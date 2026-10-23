@@ -1,11 +1,14 @@
 <?php
+// Iniciem la sessió per accedir a les dades que hem validat
 session_start();
 
+// Si l'usuari entra directament sense dades validades a la sessió, el redirigim al registre
 if (empty($_SESSION['dades_validades'])) {
     header('Location: registre.php');
     exit;
 }
 
+// Guardem les dades en una variable local per treballar més còmodament a la plantilla
 $dades = $_SESSION['dades_validades'];
 
 require_once __DIR__ . '/includes/header.php';
@@ -23,6 +26,7 @@ require_once __DIR__ . '/includes/header.php';
                 <th>Nom:</th>
                 <td><?= htmlspecialchars($dades['nom'] ?? '') ?></td>
             </tr>
+            <!-- Si s'han introduït cognoms (camp opcional), mostrem la fila -->
             <?php if (!empty($dades['cognoms'])): ?>
             <tr>
                 <th>Cognoms:</th>
@@ -40,6 +44,7 @@ require_once __DIR__ . '/includes/header.php';
             <tr>
                 <th>Telèfon:</th>
                 <td>
+                    <!-- El telèfon és opcional; si no en tenim indiquem que no s'ha posat -->
                     <?php if (!empty($dades['telefon'])): ?>
                         <?= htmlspecialchars($dades['telefon']) ?>
                     <?php else: ?>

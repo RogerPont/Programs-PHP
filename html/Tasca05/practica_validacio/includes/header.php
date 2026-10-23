@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Versionem el fitxer CSS amb la seva darrera modificació per refrescar la memòria cau -->
     <link rel="stylesheet" href="css/estils.css?v=<?= file_exists(__DIR__ . '/../css/estils.css') ? filemtime(__DIR__ . '/../css/estils.css') : time() ?>">
     <title><?= htmlspecialchars($titol ?? 'Pràctica Validació') ?></title>
 </head>

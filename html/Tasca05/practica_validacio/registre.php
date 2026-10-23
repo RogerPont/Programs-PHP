@@ -22,6 +22,7 @@ include __DIR__ . '/includes/header.php';
     <p class="subtitol">Completa els camps requerits per registrar un nou compte al sistema.</p>
 
     <form action="valida_registre.php" method="POST" novalidate>
+        <!-- Als inputs utilitzem htmlspecialchars() per mantenir els valors introduïts (sticky form) i mostrem errors si n'hi ha -->
         <div class="camp-formulari">
             <label for="nom">Nom</label>
             <input type="text" name="nom" id="nom" maxlength="50" required
@@ -82,6 +83,7 @@ include __DIR__ . '/includes/header.php';
             <?php endif; ?>
         </div>
 
+        <!-- Camp ocult amb el token CSRF per protegir l'enviament del formulari -->
         <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
 
         <button type="submit" class="boto-enviar">Registrar</button>

@@ -1,4 +1,5 @@
 <?php
+// Definim el títol de la pàgina i incloem la capçalera comuna
 $titol = 'Benvingut/da al Sistema';
 include __DIR__ . '/includes/header.php';
 ?>
