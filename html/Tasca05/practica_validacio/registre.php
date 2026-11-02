@@ -34,16 +34,6 @@ include __DIR__ . '/includes/header.php';
         </div>
 
         <div class="camp-formulari">
-            <label for="cognoms">Cognoms</label>
-            <input type="text" name="cognoms" id="cognoms" maxlength="50" required
-                   value="<?= htmlspecialchars($dades['cognoms'] ?? '') ?>"
-                   class="<?= isset($errors['cognoms']) ? 'camp-error' : '' ?>">
-            <?php if (isset($errors['cognoms'])): ?>
-                <p class="error-missatge"><?= htmlspecialchars($errors['cognoms']) ?></p>
-            <?php endif; ?>
-        </div>
-
-        <div class="camp-formulari">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" required
                    value="<?= htmlspecialchars($dades['email'] ?? '') ?>"

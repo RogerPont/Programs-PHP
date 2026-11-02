@@ -15,21 +15,6 @@ function validarNom(?string $nom): ?string {
     return null;
 }
 
-// Validació dels cognoms: camp obligatori, mida entre 2 i 50 i caràcters alfabètics
-function validarCognoms(?string $cognoms): ?string {
-    if ($cognoms === null || $cognoms === '') {
-        return "Els cognoms són obligatoris.";
-    }
-    $len = mb_strlen($cognoms, 'UTF-8');
-    if ($len < 2 || $len > 50) {
-        return "Els cognoms han de tenir entre 2 i 50 caràcters.";
-    }
-    if (!preg_match("/^[\p{L}][\p{L} '\-]*$/u", $cognoms)) {
-        return "Els cognoms només poden contenir lletres, espais, apòstrofs i guions.";
-    }
-    return null;
-}
-
 // Validació del correu electrònic amb filtre natiu de PHP
 function validarEmail(?string $email): ?string {
     if ($email === null || $email === '') {

@@ -284,6 +284,7 @@ form {
     gap: 0.35rem;
 }
 
+.camp-formulari:has(#nom),
 .camp-formulari:has(#email),
 .camp-formulari:has(#poblacio),
 .boto-enviar,
@@ -291,8 +292,9 @@ form > input[type="hidden"] {
     grid-column: 1 / -1;
 }
 
-.camp-formulari:nth-of-type(3),
-.camp-formulari:nth-of-type(6) {
+.camp-formulari:nth-of-type(1),
+.camp-formulari:nth-of-type(2),
+.camp-formulari:nth-of-type(5) {
     grid-column: 1 / -1;
 }
 
@@ -482,8 +484,9 @@ form > input[type="hidden"] {
         gap: 1rem;
     }
 
-    .camp-formulari:nth-of-type(3),
-    .camp-formulari:nth-of-type(6) {
+    .camp-formulari:nth-of-type(1),
+    .camp-formulari:nth-of-type(2),
+    .camp-formulari:nth-of-type(5) {
         grid-column: auto;
     }
 
