@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 // 1. Control d'autenticació i sessió activa
-require_once __DIR__ . '/inc/protegeix.php';
+require_once __DIR__ . '/inc/   .php';
 
 // 2. Control d'autorització: només usuaris amb rol 'admin' poden accedir-hi
 if (!isset($_SESSION['usuari']['rol']) || $_SESSION['usuari']['rol'] !== 'admin') {
