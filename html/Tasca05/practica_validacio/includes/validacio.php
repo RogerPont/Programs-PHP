@@ -1,4 +1,5 @@
 <?php
+// Validació del nom: camp obligatori, mida entre 2 i 50 caràcters i caràcters alfabètics
 function validarNom(?string $nom): ?string {
     if ($nom === null || $nom === '') {
         return "El nom és obligatori.";
@@ -7,12 +8,14 @@ function validarNom(?string $nom): ?string {
     if ($len < 2 || $len > 50) {
         return "El nom ha de tenir entre 2 i 50 caràcters.";
     }
+    // Permet lletres (amb accents), espais, apòstrofs i guions
     if (!preg_match("/^[\p{L}][\p{L} '\-]*$/u", $nom)) {
         return "El nom només pot contenir lletres, espais, apòstrofs i guions.";
     }
     return null;
 }
 
+// Validació dels cognoms: camp obligatori, mida entre 2 i 50 i caràcters alfabètics
 function validarCognoms(?string $cognoms): ?string {
     if ($cognoms === null || $cognoms === '') {
         return "Els cognoms són obligatoris.";
@@ -27,6 +30,7 @@ function validarCognoms(?string $cognoms): ?string {
     return null;
 }
 
+// Validació del correu electrònic amb filtre natiu de PHP
 function validarEmail(?string $email): ?string {
     if ($email === null || $email === '') {
         return "L'email és obligatori.";
@@ -37,6 +41,7 @@ function validarEmail(?string $email): ?string {
     return null;
 }
 
+// Validació de l'edat: enter positiu i dins del rang permès (18 a 120 anys)
 function validarEdat(?string $edat): ?string {
     if ($edat === null || $edat === '') {
         return "L'edat és obligatòria.";
@@ -51,10 +56,12 @@ function validarEdat(?string $edat): ?string {
     return null;
 }
 
+// Validació del telèfon: camp opcional, però si es posa ha de tenir 9 dígits
 function validarTelefon(?string $telefon): ?string {
     if ($telefon === null || $telefon === '') {
         return null;
     }
+    // Netegem possibles espais o guions abans de comptar dígits
     $telefonNet = preg_replace('/[\s\-]/', '', $telefon);
     if (!preg_match('/^\d{9}$/', $telefonNet)) {
         return "El telèfon ha de tenir exactament 9 dígits.";
@@ -62,6 +69,7 @@ function validarTelefon(?string $telefon): ?string {
     return null;
 }
 
+// Validació de la població: obligatòria, entre 2 i 50 caràcters alfabètics
 function validarPoblacio(?string $poblacio): ?string {
     if ($poblacio === null || $poblacio === '') {
         return "La població és obligatòria.";
@@ -76,6 +84,7 @@ function validarPoblacio(?string $poblacio): ?string {
     return null;
 }
 
+// Formatació del text de la població (majúscules inicials i gestió d'apòstrofs)
 function normalitzarPoblacio(string $poblacio): string {
     $poblacio = trim($poblacio);
     if ($poblacio === '') {
