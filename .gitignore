@@ -2,7 +2,7 @@
 .env.local
 *.local
 
-/vendor/
+vendor/
 compose.phar
 
 
