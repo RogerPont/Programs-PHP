@@ -1,0 +1,14 @@
+{
+    "name": "fp/biblioteca",
+    "description": "Sistema de gestió de biblioteca en PHP POO",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Biblioteca\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.1"
+    }
+}
+
