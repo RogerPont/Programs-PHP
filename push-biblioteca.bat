@@ -41,8 +41,14 @@ if defined PARENT_COMMIT (
 )
 
 :: 5. Crea el commit nomes amb el contingut de la carpeta biblioteca (sense usar sh.exe)
+:: Si passes un missatge (ex: .\push-biblioteca.bat "Missatge"), fa servir aquest missatge;
+:: si no passes res, agafa el missatge de l'ultim commit fet a Programs-PHP.
 set "NEW_COMMIT="
-for /f "delims=" %%i in ('git log -1 --pretty^=%%B HEAD ^| git commit-tree %SUBTREE_HASH% %PARENT_ARG%') do set "NEW_COMMIT=%%i"
+if "%~1"=="" (
+    for /f "delims=" %%i in ('git log -1 --pretty^=%%B HEAD ^| git commit-tree %SUBTREE_HASH% %PARENT_ARG%') do set "NEW_COMMIT=%%i"
+) else (
+    for /f "delims=" %%i in ('git commit-tree %SUBTREE_HASH% %PARENT_ARG% -m "%~1"') do set "NEW_COMMIT=%%i"
+)
 
 if not defined NEW_COMMIT (
     echo Error creant el commit per al repositori %REMOTE_NAME%.

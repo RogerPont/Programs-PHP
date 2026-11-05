@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Biblioteca\Models;
+namespace App\Models;
 
 class Prestec
 {

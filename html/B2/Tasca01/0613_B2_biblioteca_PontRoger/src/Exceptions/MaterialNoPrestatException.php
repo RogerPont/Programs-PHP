@@ -1,9 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Biblioteca\Exceptions;
+namespace App\Exceptions;
 
-class MaterialNoPrestatException extends \Exception
+use Exception;
+
+class MaterialNoPrestatException extends Exception
 {
 }
-

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Biblioteca\Interfaces;
+namespace App\Interfaces;
 
 interface Reservable
 {
